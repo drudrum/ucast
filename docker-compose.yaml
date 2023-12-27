@@ -1,0 +1,12 @@
+volumes:
+  node_modules:
+services:
+  ucast-env:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    working_dir: /ucast
+    volumes:
+      - .:/ucast:delegated
+      - node_modules:/ucast/node_modules
+    command: sleep infinity
